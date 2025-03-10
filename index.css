@@ -12,6 +12,7 @@
     --clr-sectionBg: var(--clr-primitive-white);
     --clr-heading: var(--clr-primitive-dark);
     --clr-text: var(--clr-primitive-gray);
+    --clr-btn: var(--clr-primitive-green);
     --clr-divider: var(--clr-primitive-gray);
     --clr-passwordBg: var(--clr-primitive-dark);
     --clr-accent: var(--clr-primitive-green);
@@ -40,4 +41,39 @@ h1 {
     text-wrap: balance;
     margin-block-end: 1rem;
     color: var(--clr-heading);
+}
+
+.input-wrapper {
+    margin-block: 1rem;
+}
+
+label {
+    font-size: 14px;
+    margin-inline-end: 8px;
+}
+
+input[type='range'] {
+    display: block;
+}
+
+button {
+    background: var(--clr-primitive-green);
+    color: var(--clr-primitive-white);
+    padding: .75em 1.2em;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: inherit;
+    border: transparent;
+    border-radius: 0.38rem;
+}
+
+hr {
+    margin-block: 1rem;
+}
+
+.passwords-wrapper {
+    padding: 1.2em;
+    background: var(--clr-passwordBg);
+    margin-block-end: 1rem;
+    border-radius: 0.38rem;
 }
