@@ -4,3 +4,9 @@ const characters = [
     "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
     "~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"
 ]
+
+const rangeEl = document.getElementById('range-el')
+const rangeValue = document.getElementById('range-value')
+
+rangeValue.textContent = rangeEl.value
+rangeEl.addEventListener('input', (e) => rangeValue.textContent = e.target.value)
