@@ -18,27 +18,26 @@
     --ff-inter: 'Inter', sans-serif;
     --fs-heading: clamp(1.5rem, 1.82vi + 1.14rem, 2.5rem);
     --fs-text: clamp(1.2rem, 1.23vi + 0.95rem, 1.88rem);
-
-    --fs-md: clamp(1.88rem, 2.65vi + 1.34rem, 3.33rem);
-    --fs-lg: clamp(2.34rem, 3.82vi + 1.58rem, 4.44rem);
-    --fs-xl: clamp(2.93rem, 5.44vi + 1.84rem, 5.92rem);
-    --fs-xxl: clamp(3.66rem, 7.69vi + 2.12rem, 7.89rem);
-    --fs-xxxl: clamp(4.58rem, 10.81vi + 2.42rem, 10.52rem);
 }
 
 body {
     font-family: var(--ff-inter);
     font-size: var(--fs-text);
     line-height: 1.5;
-    background: var(--clr-bodyBg)
+    background: var(--clr-bodyBg);
+    color: var(--clr-text);
 }
 
 section {
     max-width: 75rem;
+    padding: 1em;
     background: var(--clr-sectionBg)
 }
 
 h1 {
     font-size: var(--fs-heading);
     line-height: 1.1;
+    text-wrap: balance;
+    margin-block-end: 1rem;
+    color: var(--clr-heading);
 }
