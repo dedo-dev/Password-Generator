@@ -54,6 +54,12 @@ label {
 
 input[type='range'] {
     display: block;
+    accent-color: var(--clr-primitive-green);
+}
+
+input[type='checkbox'] {
+ accent-color: var(--clr-primitive-green);
+ color: #ECFDF5;
 }
 
 button {
