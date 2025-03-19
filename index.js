@@ -7,6 +7,7 @@ const characters = [
 let newCharactersArr = [...characters]
 const rangeEl = document.getElementById('range-el')
 const rangeValue = document.getElementById('range-value')
+const strongEl = document.getElementById('strong-el')
 const numbersEl = document.getElementById('numbers-el')
 const charsetEl = document.getElementById('charset-el')
 const getPasswordBtn = document.getElementById('get-password-btn')
@@ -19,10 +20,26 @@ let randomPasswordTwo = ''
 rangeEl.addEventListener('input', (e) => {
         rangeValue.textContent = e.target.value
         passwordLength = rangeEl.value
+        if(rangeEl.value < 12) {
+            strongEl.textContent = '(Vulnerabile)'
+            strongEl.classList.add('red')
+            strongEl.classList.remove('orange')
+            strongEl.classList.remove('green')
+        } else if(rangeEl.value < 20) {
+            strongEl.textContent = '(Intermedie)'
+            strongEl.classList.add('orange')
+            strongEl.classList.remove('green')
+        } else {
+            strongEl.textContent = '(Strong)'
+            strongEl.classList.add('green')
+        }
     }
 )
 
 rangeValue.textContent = rangeEl.value
+strongEl.textContent = '(Intermedie)'
+
+
 
 numbersEl.addEventListener('change', remNum)
 charsetEl.addEventListener('change', remCha)
@@ -72,3 +89,35 @@ function getCharacters() {
     passwordOne.textContent = randomPasswordOne
     passwordTwo.textContent = randomPasswordTwo
 }
+
+const copyBtnOne = document.getElementById('copy-btn-one')
+const copyBtnTwo = document.getElementById('copy-btn-two')
+
+copyBtnOne.addEventListener('click', function() {
+    const text = passwordOne.textContent
+    navigator.clipboard.writeText(text)
+    setTimeout(() => {
+        passwordOne.textContent = 'Password Copied'
+        passwordOne.classList.add('green')
+    }, 500);
+
+    setTimeout(() => {
+        passwordOne.textContent = ''
+        passwordOne.classList.remove('green')
+    }, 2000);
+})
+
+copyBtnTwo.addEventListener('click', function() {
+    const text = passwordTwo.textContent
+    navigator.clipboard.writeText(text)
+    setTimeout(() => {
+        passwordTwo.textContent = 'Password Copied'
+        passwordTwo.classList.add('green')
+    }, 500);
+
+    setTimeout(() => {
+        passwordTwo.textContent = ''
+        passwordTwo.classList.remove('green')
+    }, 2000);
+
+})
